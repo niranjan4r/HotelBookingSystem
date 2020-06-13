@@ -3,8 +3,8 @@
 ?>
 
 
-    <main>
-        <div class = "container">
+    <div id = "main">
+        <div class = "container top-padding">
 
             <h1>Signup</h1>
 
@@ -50,7 +50,7 @@
             </form>
 
         </div>
-    </main>
+    </div>
 
 
 <?php
