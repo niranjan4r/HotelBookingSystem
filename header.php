@@ -49,17 +49,78 @@
             </div>
             <div id = "navbar-right-elements">
                 
-                <a href = "signup.php"><button class = "btn btn-primary nav-element-right" type = "button" href = "signup.php">
-                    Signup
-                </button></a>
-                <button class = "btn btn-primary nav-element-right" type = "button">
-                    Login
-                </button>
+                
+                <?php
+                if (isset($_SESSION['userId']))
+                {
+                    echo '<form action = "includes/logout.inc.php" method = "post">
+                        <button class = "btn btn-primary nav-element-right" type = "submit" name = "logout-submit">Logout</button>
+                        </form>';
+                }
+                else 
+                {
+                    echo '<a href = "signup.php"><button class = "btn btn-primary nav-element-right" type = "button" href = "signup.php">
+                        Signup
+                    </button></a>
+                    <button class = "btn btn-primary nav-element-right" type = "button" data-toggle = "modal" data-target = "#login-modal">
+                        Login
+                    </button>';
+                }
+                ?>
+
             </div>
-            
 
         </nav>
 
+        <!-- Login Modal -->
+        <div class="modal fade" id = "login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLongTitle">Sign in to book a room or to manage your bookings</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class = "container login-form">
+                            <div class = "row">
+                                <div class = "col">
+                                    <form action = "includes/login.inc.php" class = "form-group text-center" method = "post">
+                                        <input type = "text" class = "form-control form-element" name = "emailusername" placeholder = "Username/E-mail">
+                                        <input type = "password" class = "form-control form-element" name = "pwd" placeholder = "Password">
+                                        <button type = "submit" class = "btn btn-primary form-element" name = "login-submit">Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer error-messages">
+
+
+                    <?php
+                        if (isset($_GET['error']))
+                        {
+                            if ($_GET['error'] == "emptyfields")
+                            {
+                                echo "<p>Fill in all the fields</p>";
+                            }
+                            else if ($_GET['error'] == "nouser")
+                            {
+                                echo "<p>The username or e-mail you entered doesn't exist in our records</p>";
+                            }
+                            else if ($_GET['error'] == "wrongpassword")
+                            {
+                                echo "<p>Entered Password is incorrect! Please double-check and try again</p>";
+                            }
+                        }
+                    ?>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
         
 
     </header>

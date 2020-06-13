@@ -33,11 +33,6 @@
                         echo "<p>Entered Passwords do not match</p>";
                     }
                 }
-                else if (isset($_GET['signup']))
-                {
-                    echo "<p>Signup Successful</p>";
-                    echo '<p><a href = "index.php">Click here</a> to return to home page.</p>';
-                }
             ?>
 
             <form action = "includes/signup.inc.php" method = "post">

@@ -50,6 +50,20 @@ nav {
     margin: 0 10px;
 }
 
+.login-form {
+    width: 80%;
+}
+
+.form-element {
+    margin: 20px 0;
+}
+
+.error-messages {
+    color: #c40404;
+    justify-content: left;
+}
+
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -95,6 +109,7 @@ nav {
   .top-padding {
       padding-top: 100px;
   }
+
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {

@@ -18,6 +18,14 @@
             document.getElementById("mySidenav").style.width = "0";
         }
 
+
+        /* To keep the modal open if any error while login */
+        var url = window.location.href;
+        if(url.indexOf('?error=') != -1 || url.IndexOf('/?error=') != -1) {
+            $('#login-modal').modal('show');
+        }
+        
+
     </script>
 
     </body>
