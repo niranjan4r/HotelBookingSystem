@@ -81,7 +81,7 @@
             ?>
         
         </div>
-    </div> <!-- The navbar main div-->     
+</div> <!-- The navbar left menu main div closed-->     
 
 
 <?php

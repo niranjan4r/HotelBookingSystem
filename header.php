@@ -36,8 +36,9 @@
 
 
                 <div class = "nav-element-left">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <a href = "#" id = "contact-text"><i class="fa fa-phone" aria-hidden="true"></i>
                     Contact
+                    </a>
                 </div>
 
             </div>

@@ -5,6 +5,7 @@ body {
 
 nav {
     height: 90px;
+    border-bottom: #cccccc solid 1px;
 }
 
 .navbar-brand {
@@ -43,6 +44,14 @@ nav {
 .nav-element-left {
     padding: 9px 0;
     margin-left: 65px;
+}
+
+#contact-text {
+    color: #333333;   
+}
+#contact-text:hover {
+    text-decoration: none;
+    color: blue;
 }
 
 .nav-element-right {
