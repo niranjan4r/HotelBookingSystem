@@ -34,15 +34,16 @@
                     }
                 }
             ?>
-
-            <form action = "includes/signup.inc.php" method = "post">
-                <input type = "text" name = "userName" placeholder = "Username">
-                <input type = "text" name = "mail" placeholder = "E-mail">
-                <input type = "password" name = "pwd" placeholder = "Password">
-                <input type = "password" name = "confirmPwd" placeholder = "Confirm Password">
-                <input type = "number" name = "mobile" placeholder = "Mobile Number">
-                <button type = "submit" name = "signup-submit">Signup</button>
-            </form>
+            <div class = "container" style = "width: 70%">
+                <form action = "includes/signup.inc.php" class = "form-group justify-content-center" method = "post">
+                    <input type = "text" name = "userName" class = "form-control form-element" placeholder = "Username">
+                    <input type = "text" name = "mail" class = "form-control form-element" placeholder = "E-mail">
+                    <input type = "password" name = "pwd" class = "form-control form-element" placeholder = "Password">
+                    <input type = "password" name = "confirmPwd" class = "form-control form-element" placeholder = "Confirm Password">
+                    <input type = "number" name = "mobile" class = "form-control form-element" placeholder = "Mobile Number">
+                    <button type = "submit" name = "signup-submit" class = "btn btn-primary form-element">Signup</button>
+                </form>
+            </div>
 
         </div>
     </div>
