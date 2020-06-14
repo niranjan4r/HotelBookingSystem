@@ -24,69 +24,12 @@
                 </div>
             </div>
     </div>
-
-    <div>
-            <?php 
-
-                if (isset($_SESSION['userId']))
-                {
-                    echo '<form action = "includes/logout.inc.php" method = "post">
-                    <button type = "submit" name = "logout-submit">Logout</button>
-                </form>';
-                }
-
-                else
-                {
-                    echo '<form action = "includes/login.inc.php" method = "post">
-                    <input type = "text" name = "emailusername" placeholder = "Username/E-mail">
-                    <input type = "password" name = "pwd" placeholder = "Password">
-                    <button type = "submit" name = "login-submit">Login</button>
-                </form>
-                <a href = "signup.php">Sign up</a>';
-                }
-
-            ?>
-      
-    </div>
-        
-        <div class = "container">
             
-            <?php
-
-                if (isset($_SESSION['userId']))
-                {
-                    echo "<p>You are logged in!</p>";
-                }
-
-                else if (isset($_GET['error']))
-                {
-                    if ($_GET['error'] == "emptyfields")
-                    {
-                        echo "<p>Fill in all the fields</p>";
-                    }
-                    else if ($_GET['error'] == "nouser")
-                    {
-                        echo "<p>The username or e-mail you entered doesn't exist in our records</p>";
-                    }
-                    else if ($_GET['error'] == "wrongpassword")
-                    {
-                        echo "<p>Entered Password is incorrect! Please double-check and try again</p>";
-                    }
-                }
-                else
-                {
-                    echo "<p>You are logged out!</p>";
-                }
-
-            ?>
-
-        </div>
-            
-        <div class = "container">
+    <div class = "container top-padding">
         <div class="jumbotron">
             <h4>Check availability and Book</h4>
             <br>
-            <form>
+            <form action = "includes/roombooking.inc.php" class = "form-group" method = "get">
                 <div class="row">
                     <div class="col-md-3">
                         <label for="startdate" class="control-label">From</label>
@@ -118,7 +61,7 @@
                 </div>
             </form>
         </div>
-        </div>
+    </div>
 
 
 </div> <!-- The navbar left menu main div closed-->     
