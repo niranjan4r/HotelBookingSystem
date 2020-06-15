@@ -1,6 +1,6 @@
 <?php
 
-    if (isset($_GET['room-submit']))
+    if (isset($_GET['booking-confirm']))
     {
         require "roomdb.php";
 
@@ -86,19 +86,26 @@
                                 exit();
                             }
                         }
-                        
+                        else 
+                        {
+                            header("location: ../index.php?dateerror=sqlerror");
+                            exit();
+                        }
+
                     }
                 }
                 
             }
 
-            echo "<p>".$noOfDays."</p>";
+            //Everything went well :)
+            header("location: ../bookingsuccess.php");
+            exit();
 
-            
-            
+            //echo "<p>".$noOfDays."</p>";
+
         }
 
-        echo '<p>'.$startDate.'</p>'.'<p>'.$endDate.'</p>'.'<p>'.$roomType.'</p>';
+        //echo '<p>'.$startDate.'</p>'.'<p>'.$endDate.'</p>'.'<p>'.$roomType.'</p>';
     }
     else 
     {

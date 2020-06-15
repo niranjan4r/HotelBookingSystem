@@ -28,7 +28,13 @@
 
             if (isset($_SESSION['userId']))
             {
-                echo '<button>Confirm Booking</button>';
+                echo '
+                <form name = "booking-form" action = "includes/roombooking.inc.php" method = "get">
+                    <input type = "hidden" name = "startdate" value = '.$_POST['startdate'].'>
+                    <input type = "hidden" name = "enddate" value = '.$_POST['enddate'].'>
+                    <input type = "hidden" name = "roomtype" value = '.$_POST['roomtype'].'>
+                    <button type = "submit" name = "booking-confirm" class = "btn btn-primary mb-2">Confirm Booking</button>
+                </form>';
             }
             else 
             {
@@ -36,7 +42,8 @@
             }
 
         ?>
-
+            
+            
             </div>
         
         </div>
