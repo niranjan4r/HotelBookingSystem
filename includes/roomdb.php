@@ -5,8 +5,8 @@
     $dbPassword = "";
     $dbName = "hotelusers";
 
-    $conn = mysqli_connect($servername, $dBUsername, $dbPassword, $dbName);
-    if (!$conn)
+    $link = mysqli_connect($servername, $dBUsername, $dbPassword, $dbName);
+    if (!$link)
     {
         die ("Connection failed: ".mysqli_connect_error());
     }
