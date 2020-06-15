@@ -25,41 +25,88 @@
             </div>
     </div>
             
-    <div class = "container top-padding">
+    <div class = "container top-padding" id = "availability">
         <div class="jumbotron">
             <h4>Check availability and Book</h4>
             <br>
-            <form action = "includes/roombooking.inc.php" class = "form-group" method = "get">
+            <form name = "booking-form" action = "includes/checkavailability.inc.php" class = "form-group justify-content-center" method = "get">
                 <div class="row">
+
                     <div class="col-md-3">
                         <label for="startdate" class="control-label">From</label>
                     </div>
                     <div class="col-md-3">
                         <label for="enddate" class="control-label">To</label>
                     </div>
+
                 </div>
+
                 <div class="row">
-                    <div class="col-md-3">
-                        <input type="date" class="form-control" name = "startdate" id="startdate">
+
+                    <?php 
+
+                        $strt = "";
+                        $end = "";
+                        $readOnly = "";
+                        $dis1 = ""; $dis2= ""; $dis3 = "";
+
+                        if (isset($_GET['roomstatus']))
+                        {
+                            $strt = "value = ".$_GET['startdate'];
+                            $end = "value = ".$_GET['enddate'];
+                            $readOnly = " readonly ";
+                            if ($_GET['roomtype'] == "Standard")
+                            {
+                                $dis2 = " disabled ";
+                                $dis3 = " disabled ";
+                            }
+                            else if ($_GET['roomtype'] == "Executive")
+                            {
+                                $dis1 = " disabled ";
+                                $dis3 = " disabled ";
+                            }
+                            else if ($_GET['roomtype'] == "Premium")
+                            {
+                                $dis1 = " disabled ";
+                                $dis2 = " disabled ";
+                            }
+                        }
+                    echo '<div class="col-md-3">
+                        <input type="date" '.$strt.$readOnly.' class="form-control" name = "startdate" id = "startdate">
                     </div>
 
                     <div class="col-md-3">
-                        <input type="date" class="form-control" name = "enddate" id="enddate">
+                        <input type="date" '.$end.$readOnly.' class="form-control" name = "enddate" id = "enddate">
                     </div>
 
                     <div class="col-md-4 form-group">
                         <select class="custom-select" name = "roomtype">
-                            <option>Standard</option>
-                            <option>Executive</option>
-                            <option>Premium</option>
+                            <option '.$dis1.'>Standard</option>
+                            <option '.$dis2.'>Executive</option>
+                            <option '.$dis3.'>Premium</option>
                         </select>
                     </div>
 
                     <div class="col-md-2">
-                        <button type="submit" name = "room-submit" class="btn btn-primary mb-2">Book</button>
-                    </div>
+                        <button type="submit" name = "room-submit" class="btn btn-primary mb-2">Check</button>
+                    </div>'
+
+                    ?>
                 </div>
+
+                <?php
+
+                    if (isset($_GET['roomstatus']))
+                    {
+                        echo '
+                            <div class="row justify-content-center">
+                                <button type = "submit" formaction="booking.php" name = "book-submit" class="btn btn-primary mb-2">Book Now</button>
+                            </div>';
+                    }
+                ?>
+
             </form>
+
         </div>
     </div>
 

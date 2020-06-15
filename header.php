@@ -29,7 +29,7 @@
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <a href = "index.php">Home</a>
-                    <a href = "#">Restaurant</a>
+                    <a href = "#availability">Restaurant</a>
                     <a href = "#"></a>
                     <a href = "#"></a>
                 </div>
