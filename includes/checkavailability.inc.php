@@ -1,12 +1,12 @@
 <?php
 
-    if (isset($_GET['room-submit']))
+    if (isset($_POST['room-submit']))
     {
         require "roomdb.php";
 
-        $startDate = $_GET['startdate'];
-        $endDate = $_GET['enddate'];
-        $roomType = $_GET['roomtype'];
+        $startDate = $_POST['startdate'];
+        $endDate = $_POST['enddate'];
+        $roomType = $_POST['roomtype'];
         $start = strtotime($startDate);
         $end = strtotime($endDate);
         $roomLimit = 5;

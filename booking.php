@@ -13,11 +13,11 @@
             <div class = "container">
             
         <?php
-            if (isset($_GET['book-submit']))
+            if (isset($_POST['book-submit']))
             {
-                echo '<h5>Check In: '.$_GET['startdate'].' 1:00 pm</h5>
-                <h5>Check Out: '.$_GET['enddate'].' 12:00 am</h5>
-                <h5>Room Type: '.$_GET['roomtype'].'</h5>';
+                echo '<h5>Check In: '.$_POST['startdate'].' 1:00 pm</h5>
+                <h5>Check Out: '.$_POST['enddate'].' 12:00 am</h5>
+                <h5>Room Type: '.$_POST['roomtype'].'</h5>';
             }
 
             else

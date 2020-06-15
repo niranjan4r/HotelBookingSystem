@@ -29,7 +29,7 @@
         <div class="jumbotron">
             <h4>Check availability and Book</h4>
             <br>
-            <form name = "booking-form" action = "includes/checkavailability.inc.php" class = "form-group justify-content-center" method = "get">
+            <form name = "booking-form" action = "includes/checkavailability.inc.php" class = "form-group justify-content-center" method = "post">
                 <div class="row">
 
                     <div class="col-md-3">
